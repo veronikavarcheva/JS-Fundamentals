@@ -1,25 +1,43 @@
 function pyramid(n, increment) {
-    let n = input.shift();
-    let increment = input.shift();
-    let stoneRequired = 0;
-    let lapislazuliRequired = 0;
-    let goldRequired = 0;
-    let marbleRequired = 0;
-    let area = 0;
-    for ( let step = n; step >= 1; step-=2 ) {
-        area += step * step;
-        stoneRequired += (step-2)*(step-2);
-        
-        let fifthStepArea = (step-5*2)*(step-5*2);
-        lapislazuliRequired = ((step - 4 * 2) * (step - 4 * 2)) - fifthStepArea;
-        goldRequired = (step - 5 * 2) * (step - 5 * 2);
-        marbleRequired =  area - stoneRequired - lapislazuliRequired - goldRequired;
-        
-
+    let totalStone = 0;
+    let totalMarble = 0;
+    let totalLapis = 0;
+    let totalGold = 0;
+    let counter = 0;
+    let base = n;
+  
+    while (base > 2) {
+      let marbel = base * 4 - 4;
+      let stone = base * base - marbel;
+      totalStone += stone;
+  
+      counter++;
+      if (counter % 5 === 0) {
+        totalLapis += marbel;
+      } else {
+        totalMarble += marbel;
+      }
+      base -= 2;
     }
-}
+    counter++;
+    let gold = base * base;
+  
+    stone = Math.ceil(totalStone * increment);
+    marble = Math.ceil(totalMarble * increment);
+    lapis = Math.ceil(totalLapis * increment);
+    totalGold = Math.ceil(gold * increment);
+    totalHeight = Math.floor(counter * increment);
+  
+    console.log(`Stone required: ${stone}`);
+    console.log(`Marble required: ${marble}`);
+    console.log(`Lapis Lazuli required: ${lapis}`);
+    console.log(`Gold required: ${totalGold}`);
+    console.log(`Final pyramid height: ${totalHeight}`);
+  }
 
-pyramid(11, 1);
-pyramid(11, 0.75);
-pyramid(12, 1);
-pyramid(23, 0.5);
+
+
+  pyramid(11, 1);
+  pyramid(11, 0.75);
+  pyramid(12, 1);
+  pyramid(23, 0.5);
