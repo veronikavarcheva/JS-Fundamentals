@@ -2,12 +2,12 @@ function solve(n, array) {
 let newArr = [];
 
 for(let i = 0; i < n; i++){
-     newArr[i]= array[i];
+     newArr[i] = array[i];
     
     
 }
 let output = '';
-for(let j=newArr.length-1;j >=0; j--){
+for(let j = newArr.length-1; j >= 0; j--){
     output += `${Number(newArr[j])} `;
 }
 console.log(output);
