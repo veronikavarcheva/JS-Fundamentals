@@ -10,7 +10,7 @@ function solve(firstArray, secondArray) {
             firstArray[i] = Number(firstArray[i]);
             secondArray[i] = Number(secondArray[i]);
             sumFirstArrayElements += firstArray[i];
-            if(firstArray[i] != secondArray[i]) {
+            if (firstArray[i] != secondArray[i]) {
                 console.log(`Arrays are not identical. Found difference at ${i} index`);
                 areEquel = false;
                 break;  
@@ -24,6 +24,6 @@ function solve(firstArray, secondArray) {
       
 }
 
-solve(['10','20','30'], ['10','20','30']);
-solve(['1','2','3','4','5'], ['1','2','4','4','5']);
-solve(['1'], ['10']);
+solve (['10','20','30'], ['10','20','30']);
+solve (['1','2','3','4','5'], ['1','2','4','4','5']);
+solve (['1'], ['10']);
