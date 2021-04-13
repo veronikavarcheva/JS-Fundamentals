@@ -1,7 +1,7 @@
 function solve(n, array) {
 let newArr = [];
 
-for(let i = 0; i < n; i++){
+for (let i = 0; i < n; i++){
      newArr[i] = array[i];
     
     
