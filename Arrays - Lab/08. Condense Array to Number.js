@@ -8,9 +8,9 @@ function solve(numbers) {
     while( numbers.length>1){
         condensed = [];
         for(let i = 0; i < numbers.length - 1; i++){          
-            condensed[i] = numbers[i]+numbers[i+1];
+            condensed[i] = numbers[i] + numbers[i+1];
         }            
-        numbers=condensed;       
+        numbers = condensed;       
     }
     console.log (condensed[0]);    
 }
