@@ -5,11 +5,10 @@ function solve(array) {
     let output = '';
 
     for(let i=0; i < swapOperations; i++){
-        newArray[i]=array[array.length-1-i];
-        newArray[array.length-1-i]=array[i];
+        newArray[i] = array[array.length-1-i];
+        newArray[array.length-1-i] = array[i];
     }
-    // console.log(newArray);
-    
+      
     for(let element of newArray){
         output += element + ' ';
     }
